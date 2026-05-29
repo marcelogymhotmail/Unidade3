@@ -1,36 +1,36 @@
-# GerenciamentoPessoal
+#  GerenciamentoPessoal
 
 API REST para gerenciamento de tarefas pessoais desenvolvida com Spring Boot.
 
 ---
 
-# Tecnologias Utilizadas
+#  Tecnologias Utilizadas
 
-* Java
-* Spring Boot
-* Spring Web
-* Spring Data JPA
-* PostgreSQL
-* Lombok
-* Bean Validation
+- Java
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- PostgreSQL
+- Lombok
+- Bean Validation
 
 ---
 
-# Funcionalidades
+#  Funcionalidades
 
 A API permite:
 
-* Listar tarefas
-* Buscar tarefa por ID
-* Criar tarefa
-* Atualizar tarefa
-* Deletar tarefa
-* Validar dados enviados pelo cliente
-* Tratar erros de forma personalizada
+- Listar tarefas
+- Buscar tarefa por ID
+- Criar tarefa
+- Atualizar tarefa
+- Deletar tarefa
+- Validar dados enviados pelo cliente
+- Tratar erros de forma personalizada
 
 ---
 
-# URL Base da API
+#  URL Base da API
 
 ```http
 http://localhost:8080
@@ -38,17 +38,19 @@ http://localhost:8080
 
 ---
 
-# Estrutura dos Endpoints
+#  Estrutura dos Endpoints
 
-## Listar todas as tarefas
+---
 
-### GET
+#  Listar todas as tarefas
+
+## GET
 
 ```http
 GET /api/tarefas
 ```
 
-### Resposta
+## Resposta
 
 ```json
 [
@@ -61,42 +63,46 @@ GET /api/tarefas
 ]
 ```
 
-### Status HTTP
+## Status HTTP
 
-* 200 OK
+| Código | Descrição |
+|--------|------------|
+| 200 | OK |
 
 ---
 
-## Buscar tarefa por ID
+#  Buscar tarefa por ID
 
-### GET
+## GET
 
 ```http
 GET /api/tarefas/{id}
 ```
 
-### Exemplo
+## Exemplo
 
 ```http
 GET /api/tarefas/1
 ```
 
-### Status HTTP
+## Status HTTP
 
-* 200 OK
-* 404 NOT FOUND
+| Código | Descrição |
+|--------|------------|
+| 200 | OK |
+| 404 | Not Found |
 
 ---
 
-## Criar nova tarefa
+# ➕ Criar nova tarefa
 
-### POST
+## POST
 
 ```http
 POST /api/tarefas
 ```
 
-### Body JSON
+## Body JSON
 
 ```json
 {
@@ -106,28 +112,30 @@ POST /api/tarefas
 }
 ```
 
-### Status HTTP
+## Status HTTP
 
-* 201 CREATED
-* 400 BAD REQUEST
+| Código | Descrição |
+|--------|------------|
+| 201 | Created |
+| 400 | Bad Request |
 
 ---
 
-## Atualizar tarefa
+#  Atualizar tarefa
 
-### PUT
+## PUT
 
 ```http
 PUT /api/tarefas/{id}
 ```
 
-### Exemplo
+## Exemplo
 
 ```http
 PUT /api/tarefas/1
 ```
 
-### Body JSON
+## Body JSON
 
 ```json
 {
@@ -137,38 +145,42 @@ PUT /api/tarefas/1
 }
 ```
 
-### Status HTTP
+## Status HTTP
 
-* 200 OK
-* 400 BAD REQUEST
-* 404 NOT FOUND
+| Código | Descrição |
+|--------|------------|
+| 200 | OK |
+| 400 | Bad Request |
+| 404 | Not Found |
 
 ---
 
-## Deletar tarefa
+#  Deletar tarefa
 
-### DELETE
+## DELETE
 
 ```http
 DELETE /api/tarefas/{id}
 ```
 
-### Exemplo
+## Exemplo
 
 ```http
 DELETE /api/tarefas/1
 ```
 
-### Status HTTP
+## Status HTTP
 
-* 204 NO CONTENT
-* 404 NOT FOUND
+| Código | Descrição |
+|--------|------------|
+| 204 | No Content |
+| 404 | Not Found |
 
 ---
 
-# Tratamento de Erros
+#  Tratamento de Erros
 
-A API possui tratamento global de exceções para retornar mensagens mais amigáveis.
+A API possui tratamento global de exceções para retornar mensagens amigáveis.
 
 ## Exemplo — Tarefa não encontrada
 
@@ -188,38 +200,38 @@ A API possui tratamento global de exceções para retornar mensagens mais amigá
 
 ---
 
-# Validações Implementadas
+#  Validações Implementadas
 
 Os seguintes campos são obrigatórios:
 
-* titulo
-* descricao
-* concluida
+- titulo
+- descricao
+- concluida
 
 ---
 
-# Testes da API
+#  Testes da API
 
 Os testes da API foram realizados utilizando:
 
-* Postman
+- Postman
 
 ---
 
-# Códigos HTTP Utilizados
+#  Códigos HTTP Utilizados
 
-| Código | Descrição             |
-| ------ | --------------------- |
-| 200    | OK                    |
-| 201    | Created               |
-| 204    | No Content            |
-| 400    | Bad Request           |
-| 404    | Not Found             |
-| 500    | Internal Server Error |
+| Código | Descrição |
+|--------|------------|
+| 200 | OK |
+| 201 | Created |
+| 204 | No Content |
+| 400 | Bad Request |
+| 404 | Not Found |
+| 500 | Internal Server Error |
 
 ---
 
-# Arquitetura do Projeto
+#  Arquitetura do Projeto
 
 O projeto foi organizado utilizando arquitetura em camadas:
 
@@ -234,6 +246,6 @@ exception
 
 ---
 
-# Autor
+#  Autor
 
 Marcelo Borges

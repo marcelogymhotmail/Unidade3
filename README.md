@@ -94,7 +94,7 @@ GET /api/tarefas/1
 
 ---
 
-# ➕ Criar nova tarefa
+#  Criar nova tarefa
 
 ## POST
 

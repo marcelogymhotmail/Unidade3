@@ -56,8 +56,8 @@ GET /api/tarefas
 [
   {
     "id": 1,
-    "titulo": "Estudar Spring Boot",
-    "descricao": "Criar API REST",
+    "titulo": "Lavar carro",
+    "descricao": "Levar carro ate o lavajato",
     "concluida": false
   }
 ]

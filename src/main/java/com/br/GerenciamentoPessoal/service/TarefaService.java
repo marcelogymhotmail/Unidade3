@@ -1,5 +1,6 @@
 package com.br.GerenciamentoPessoal.service;
 
+import com.br.GerenciamentoPessoal.exception.RecursoNaoEncontradoException;
 import com.br.GerenciamentoPessoal.model.Tarefa;
 import com.br.GerenciamentoPessoal.repository.TarefaRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,14 +19,21 @@ public class TarefaService {
         return tarefaRepository.findAll();
     }
 
+    public Tarefa buscarPorId(Long id) {
+
+        return tarefaRepository.findById(id)
+                .orElseThrow(() ->
+                        new RecursoNaoEncontradoException(
+                                "Tarefa não encontrada"));
+    }
+
     public Tarefa salvar(Tarefa tarefa) {
         return tarefaRepository.save(tarefa);
     }
 
     public Tarefa atualizar(Long id, Tarefa tarefaAtualizada) {
 
-        Tarefa tarefa = tarefaRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+        Tarefa tarefa = buscarPorId(id);
 
         tarefa.setTitulo(tarefaAtualizada.getTitulo());
         tarefa.setDescricao(tarefaAtualizada.getDescricao());
@@ -36,8 +44,7 @@ public class TarefaService {
 
     public void deletar(Long id) {
 
-        Tarefa tarefa = tarefaRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+        Tarefa tarefa = buscarPorId(id);
 
         tarefaRepository.delete(tarefa);
     }
